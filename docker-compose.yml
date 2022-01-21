@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  server:
+    build: .
+    ports:
+      - 3003:3003
+    environment:
+      - MONGO_CONNECTION_STRING=mongodb://mongodb-challenge:27017/challenge
+      - EXPRESS_PORT=3003
+  mongodb:
+    image: mongo
+    container_name: mongodb-challenge
+    environment:
+      - MONGO_INITDB_DATABASE=challenge
+    volumes:
+      - mongodbdata:/data/db
+volumes:
+  mongodbdata:
