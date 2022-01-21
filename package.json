@@ -1,0 +1,15 @@
+{
+  "name": "likeme-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nattapong",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "start" : "yarn workspace web build_web && yarn workspace server start"
+  }
+}
