@@ -10,7 +10,9 @@ const connectDB = async () => {
             useUnifiedTopology: true,
             autoIndex: false
         });
+        console.log("connected to ", process.env.MONGO_CONNECTION_STRING)
     } catch (err) {
+        console.log("error to ", process.env.MONGO_CONNECTION_STRING)
         throw new Error(err);
     }
 };
